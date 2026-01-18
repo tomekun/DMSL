@@ -49,8 +49,8 @@ copy .env.example .env
 `.env` ファイルを編集：
 
 ```env
-DISCORD_BOT_TOKEN=あなたのボットトークン
-CLIENT_ID=あなたのクライアントID
+DISCORD_BOT_TOKEN=自分のBOTのボットトークン
+CLIENT_ID=自分のBOTのクライアントID
 ```
 
 > [!NOTE]
