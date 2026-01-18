@@ -34,7 +34,6 @@ npm install
 
 ### 3. Discord Botの作成
 
-[Discord Bot セットアップガイド](file:///C:/Users/yuta7/.gemini/antigravity/brain/7dfdb19c-eef1-4a57-9248-3ae93a5a7310/discord_bot_setup_guide.md) を参照して、以下の情報を取得してください：
 
 - Discord Bot Token
 - Application ID (Client ID)
@@ -55,7 +54,7 @@ CLIENT_ID=あなたのクライアントID
 ```
 
 > [!NOTE]
-> このBotはグローバルコマンドを使用するため、`GUILD_ID`は不要です。コマンドは全サーバーで使用できますが、反映に最大1時間かかる場合があるかも？
+> このBotはグローバルコマンドを使用するため、`GUILD_ID`は不要。コマンドは全サーバーで使用できる、反映に最大1時間かかる場合があるかも？
 
 ### 5. サーバー設定の確認
 
@@ -66,21 +65,21 @@ CLIENT_ID=あなたのクライアントID
   "javaServer": {
     "command": "起動できるbatファイルのフルパス",
     "host": "自分のグローバルIP",
-    "port": 25565
+    "port": 25565 //デフォルトは25565
   },
   "bedrockServer": {
     "command": "起動できるbatファイルのフルパス",
     "host": "自分のグローバルIP",
-    "port": 19132
+    "port": 19132 //デフォルトは19132
   },
-  "checkIntervalMinutes": 10
+  "checkIntervalMinutes": 10 
 }
 ```
 
 ### 6. スラッシュコマンドの登録
 
 初回のみ実行が必要（deploy-commands.jsを変更したら実行してね）：
-
+pwershellでコマンド打っているけどJavaScript Debug Terminalでもいいかも
 ```powershell
 node deploy-commands.js
 ```
@@ -105,7 +104,7 @@ npm start
 
 1. Discord サーバーで `/server` コマンドを入力
 2. 緑色のボタン（統合版）または赤色のボタン（Java）をクリック
-3. サーバーが起動します
+3. サーバーが起動
 4. プレイヤーが10分間不在の場合、自動的にサーバーが停止
 
 ## トラブルシューティング
