@@ -8,12 +8,17 @@
     "start": "node bot.js",
     "deploy": "node deploy-commands.js"
   },
-  "keywords": ["discord", "minecraft", "bot"],
+  "keywords": [
+    "discord",
+    "minecraft",
+    "bot"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
     "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1",
     "minecraft-server-util": "^5.4.3",
-    "dotenv": "^16.3.1"
+    "ollama": "^0.6.3"
   }
 }

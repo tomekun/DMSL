@@ -1,14 +1,22 @@
-import { Client, GatewayIntentBits, ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, ActivityType } from 'discord.js';
+import { Client, GatewayIntentBits, ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, ActivityType, Partials } from 'discord.js';
 import { status, statusBedrock } from 'minecraft-server-util';
 import { spawn } from 'child_process';
 import dotenv from 'dotenv';
 import fs from 'fs';
 import readline from 'readline';
+import ollama from 'ollama';
 
 dotenv.config();
 
 const config = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({
+    intents: [
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.DirectMessages,
+        GatewayIntentBits.MessageContent
+    ],
+    partials: [Partials.Channel, Partials.Message]
+});
 
 // サーバープロセスを管理するオブジェクト
 const serverProcesses = {
@@ -258,5 +266,43 @@ function startPlayerMonitoring(serverType, serverConfig, channel) {
         }, checkInterval);
     }, initialDelay);
 }
+
+client.on('messageCreate', async (message) => {
+    // Bot自身のメッセージは無視
+    if (message.author.bot) return;
+
+    // DMの場合のみ反応 (またはメンション)
+    // message.guild が null なら DM
+    if (!message.guild) {
+        console.log(`[DM] ${message.author.tag}: ${message.content}`); // ログ出力
+
+        try {
+            await message.channel.sendTyping();
+
+            const response = await ollama.chat({
+                model: 'gemma3:1b', // メモリ制約のため 1b を使用
+                messages: [
+                    { role: 'system', content: config.aiPersona || 'You are a helpful assistant.' },
+                    { role: 'user', content: message.content }
+                ],
+            });
+
+            // Discordの文字数制限 (2000文字) 対策
+            const replyText = response.message.content;
+            if (replyText.length > 2000) {
+                // 簡易的な分割 (2000文字ずつ)
+                for (let i = 0; i < replyText.length; i += 2000) {
+                    await message.reply(replyText.substring(i, i + 2000));
+                }
+            } else {
+                await message.reply(replyText);
+            }
+
+        } catch (error) {
+            console.error('Ollama Error:', error);
+            await message.reply('申し訳ありません。AIの処理中にエラーが発生しました。');
+        }
+    }
+});
 
 client.login(process.env.DISCORD_BOT_TOKEN);

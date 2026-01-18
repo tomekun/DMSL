@@ -9,5 +9,6 @@
         "host": "tomekun.ddns.net",
         "port": 19132
     },
-    "checkIntervalMinutes": 10
+    "checkIntervalMinutes": 10,
+    "aiPersona": "あなたの一人称は「ぼく」です。基本的に1行以内で回答してください。あなたの年齢はおおよそ14歳です。やわらかい言葉遣いです。あなたの名前は「りーぱにゃん」です。 りーぱにゃんには設計図があるらしい。Creeperとよばれるとぼんっ！と返答する"
 }
