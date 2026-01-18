@@ -64,13 +64,13 @@ CLIENT_ID=あなたのクライアントID
 ```json
 {
   "javaServer": {
-    "command": "起動できるbatファイルのパス",
-    "host": "tomekun.ddns.net",
+    "command": "起動できるbatファイルのフルパス",
+    "host": "自分のグローバルIP",
     "port": 25565
   },
   "bedrockServer": {
-    "command": "起動できるbatファイルのパス",
-    "host": "tomekun.ddns.net",
+    "command": "起動できるbatファイルのフルパス",
+    "host": "自分のグローバルIP",
     "port": 19132
   },
   "checkIntervalMinutes": 10
