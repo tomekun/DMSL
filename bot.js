@@ -9,6 +9,10 @@ import ollama from 'ollama';
 dotenv.config();
 
 const config = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
+
+// 環境変数でパスを上書き (セキュリティのため)
+if (process.env.JAVA_SERVER_PATH) config.javaServer.command = process.env.JAVA_SERVER_PATH;
+if (process.env.BEDROCK_SERVER_PATH) config.bedrockServer.command = process.env.BEDROCK_SERVER_PATH;
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
