@@ -1,0 +1,13 @@
+{
+    "javaServer": {
+        "command": "C:\\Users\\yuta7\\Desktop\\denjoMC\\バニラ起動.bat",
+        "host": "tomekun.ddns.net",
+        "port": 25565
+    },
+    "bedrockServer": {
+        "command": "C:\\Users\\yuta7\\Desktop\\denjoBE\\run.bat",
+        "host": "tomekun.ddns.net",
+        "port": 19132
+    },
+    "checkIntervalMinutes": 10
+}
