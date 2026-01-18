@@ -1,12 +1,12 @@
 {
     "javaServer": {
         "command": "",
-        "host": "tomekun.ddns.net",
+        "host": "",
         "port": 25565
     },
     "bedrockServer": {
         "command": "",
-        "host": "tomekun.ddns.net",
+        "host": "",
         "port": 19132
     },
     "checkIntervalMinutes": 10,
