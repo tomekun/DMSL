@@ -1,4 +1,4 @@
-# Minecraft Discord Bot
+# Discord Minecraft Server Launcher Bot
 
 DiscordからMinecraftサーバー（Java版・統合版）を起動・管理できるBot。プレイヤーが不在の場合、自動でサーバーを停止する（はず）。
 
