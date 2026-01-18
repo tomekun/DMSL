@@ -1,6 +1,6 @@
 # Minecraft Discord Bot
 
-DiscordからMinecraftサーバー（Java版・統合版）を起動・管理できるBotです。プレイヤーが不在の場合、自動でサーバーを停止します。
+DiscordからMinecraftサーバー（Java版・統合版）を起動・管理できるBot。プレイヤーが不在の場合、自動でサーバーを停止する（はず）。
 
 ## 機能
 
@@ -41,7 +41,7 @@ npm install
 
 ### 4. 環境変数の設定
 
-`.env.example` を `.env` にコピーして、取得した情報を入力します：
+`.env.example` を `.env` にコピーして、取得した情報を入力してね：
 
 ```powershell
 copy .env.example .env
@@ -55,21 +55,21 @@ CLIENT_ID=あなたのクライアントID
 ```
 
 > [!NOTE]
-> このBotはグローバルコマンドを使用するため、`GUILD_ID`は不要です。コマンドは全サーバーで使用できますが、反映に最大1時間かかる場合があります。
+> このBotはグローバルコマンドを使用するため、`GUILD_ID`は不要です。コマンドは全サーバーで使用できますが、反映に最大1時間かかる場合があるかも？
 
 ### 5. サーバー設定の確認
 
-`config.json` を開いて、サーバーのパスとアドレスが正しいか確認してください：
+`config.json` を開いて、サーバーのパスとアドレスが正しいか確認すること：
 
 ```json
 {
   "javaServer": {
-    "command": "C:\\Users\\yuta7\\Desktop\\denjoMC\\バニラ起動.bat",
+    "command": "起動できるbatファイルのパス",
     "host": "tomekun.ddns.net",
     "port": 25565
   },
   "bedrockServer": {
-    "command": "C:\\Users\\yuta7\\Desktop\\bedrock-server-1.21.132.3\\bedrock_server.exe",
+    "command": "起動できるbatファイルのパス",
     "host": "tomekun.ddns.net",
     "port": 19132
   },
@@ -79,13 +79,13 @@ CLIENT_ID=あなたのクライアントID
 
 ### 6. スラッシュコマンドの登録
 
-初回のみ実行が必要です：
+初回のみ実行が必要（deploy-commands.jsを変更したら実行してね）：
 
 ```powershell
 node deploy-commands.js
 ```
 
-成功すると「✅ スラッシュコマンドの登録が完了しました！」と表示されます。
+成功すると「✅ スラッシュコマンドの登録が完了しました！」と表示する
 
 ### 7. Botの起動
 
@@ -99,14 +99,14 @@ node bot.js
 npm start
 ```
 
-成功すると「✅ Botが起動しました: [ボット名]」と表示されます。
+成功すると「✅ Botが起動しました: [ボット名]」と表示される
 
 ## 使い方
 
 1. Discord サーバーで `/server` コマンドを入力
 2. 緑色のボタン（統合版）または赤色のボタン（Java）をクリック
 3. サーバーが起動します
-4. プレイヤーが10分間不在の場合、自動的にサーバーが停止します
+4. プレイヤーが10分間不在の場合、自動的にサーバーが停止
 
 ## トラブルシューティング
 
@@ -161,7 +161,7 @@ npm start
 ## ファイル構成
 
 ```
-AI/
+DMSL/
 ├── bot.js                    # メインBotファイル
 ├── deploy-commands.js        # コマンド登録スクリプト
 ├── config.json               # サーバー設定
@@ -177,7 +177,7 @@ MIT
 
 ## サポート
 
-問題が発生した場合は、以下を確認してください：
+問題が発生した場合は、以下を確認してね：
 
 1. Node.jsのバージョン
 2. `.env` ファイルの内容
