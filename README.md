@@ -162,7 +162,7 @@ npm start
 
 ### AIの人格設定
 
-`config.json` の `aiPersona` を編集することでAIの性格や話し方を変更できる！←ここ重要：
+`config.json` の `aiPersona` を編集することでAIの性格や話し方を変更できる！←ここ重要()
 
 ```json
 {
